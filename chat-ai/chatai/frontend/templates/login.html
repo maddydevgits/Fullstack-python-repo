@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title style="text-align: center";>Login form</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
+    </head>
+    <body>
+        <div class="box">
+            <form action="/loginForm" method="post">
+                <h2>Sign in</h2>
+                <div class="inputbox">
+                    <label style="background-color: aliceblue;">
+                    <input type="text" placeholder="Username" name="username" required="required">
+                    <span></span>
+                    </label>
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    <label style="background-color: aliceblue;">
+                    <input type="password" placeholder="Password" name="password" required="required">
+                    </label>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <!-- <a href="#">Forget Password</a> -->
+                    <span style="color:white">If you don't have an account, </span><a href="/register">Signup</a>
+                </div>
+                <input type="submit" value="Login">
+                <center>
+                    <span style="color:red">{{err}}</span>
+                    <span style="color:green">{{res}}</span>
+                </center>
+            </form>
+            
+        </div>
+    </body>
+</html>

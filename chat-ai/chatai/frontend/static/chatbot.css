@@ -1,0 +1,13 @@
+body{
+    height: 100vh;
+    background-color: lavender;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header h1{
+    padding: 1px;
+}
+.body{
+    flex: 1;
+}

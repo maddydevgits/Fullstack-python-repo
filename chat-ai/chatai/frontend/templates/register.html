@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register form</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='register.css')}}">
+    </head>
+    <body>
+        <div class="box">
+            <span class="borderLine"></span>
+            <form action="/registerForm" method="POST">
+                <h2>Sign up</h2>
+                <div class="inputbox">
+                    <label style="background-color: aliceblue;">
+                    <input type="text" placeholder="Name" name="name" required="required">
+                    <span></span>
+                    </label>
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    <label style="background-color: aliceblue;">
+                    <input type="text" placeholder="Mobile" name="mobile" required="required">
+                    <span></span>
+                    </label>
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    <label style="background-color: aliceblue;">
+                    <input type="text" placeholder="Email ID" name="emailid" required="required">
+                    <span></span>
+                    </label>
+                    <i></i>
+                </div>
+                <div class="inputbox">
+                    <label style="background-color: aliceblue;">
+                    <input type="password" placeholder="Password" name="password" required="required">
+                    </label>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <!-- <a href="#">Forget Password</a> -->
+                    <a href="/login">Sign in</a>
+                </div>
+                <input type="submit" value="Register">
+                <center>
+                    <span style="color:red">{{err}}</span>
+                    <span style="color:green">{{res}}</span>
+                </center>
+            </form>
+        </div>
+    </body>
+</html>
