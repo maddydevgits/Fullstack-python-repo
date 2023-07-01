@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: azure;">Products View</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <style>
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family:'sans-serif';
+            font-size: 25.6px;
+            font-weight: 400;
+            background-color: #fff;
+            color: #243a6f;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 500;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .productCenter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 112px 48px;
+        }
+
+        .product {
+            height: 768px;
+            background-color: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-radius: 16px;
+            text-align: center;
+            transition: all 300ms ease-in-out;
+        }
+
+        .product:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .productHeader {
+            position: relative;
+            height: 560px;
+            background-color: #f6f2f1;
+            transition: all 300ms ease-in-out;
+            z-index: 0;
+        }
+
+        .productHeader img {
+            height: 100%;
+        }
+
+        .productFooter {
+            padding: 32px 25.6px 25.6px 25.6px;
+        }
+
+        .productFooter h3 {
+            font-size: 35.2px;
+        }
+
+        .rating {
+            color: #43b3d9;
+        }
+
+        .productFooter .price {
+            color: #ff7c9c;
+            font-size: 32px;
+        }
+
+        .product:hover .productHeader::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 16px 16px 0 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 500ms ease-in-out;
+            z-index: 1;
+        }
+
+        .productHeader .icons {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translate(0, -50%) scale(0);
+            z-index: 2;
+            opacity: 0;
+            transition: all 500ms ease-in-out;
+        }
+
+        .productHeader .icons span {
+            background-color: #fff;
+            font-size: 40px;
+            display: block;
+            border-radius: 50%;
+            padding: 24px 25.6px;
+            line-height: 32px;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+        }
+
+        .productHeader .icons span i {
+            transition: all 500ms ease-in-out;
+        }
+
+        .productHeader .icons span:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        .productHeader .icons span:hover {
+            background-color: #ff7c9c;
+            color: #fff;
+        }
+
+        .product:hover .icons {
+            opacity: 1;
+            transform: translate(0, -50%) scale(1);
+        }
+
+        .productHeader .icons a {
+            display: block;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('https://miro.medium.com/max/1200/0*z2sRtp_yqUS4Yuno');">
+    <!--Latest -->
+    <section class="section featured">
+        <div class="container">
+            <div class="title">
+                <h1 style="color: azure;">Latest Products</h1>
+            </div>
+            <div class="container">
+                <a href="/addproduct" style="color: azure; text-align: center;">Add Product</a>
+            </div>
+            <div class="productCenter container">
+            {%for i in range(l)%}
+                
+                <div class="product">
+                    <div class="productHeader">
+                        <img src={{dashboard_data[i][1]}} alt="">
+
+                        <ul class="icons">
+                            <span><i class="bx bx-heart"></i></span>
+                            <span><i class="bx bx-shopping-bag"></i></span>
+                            <span><i class="bx bx-search"></i></span>
+                        </ul>
+                    </div>
+                    <div class="productFooter">
+                        <a href="#">
+                            <h3>{{dashboard_data[i][0]}}</h3>
+                        </a>
+                        <div class="rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bx-star"></i>
+                        </div>
+                        <h4 class="price">Rs. {{dashboard_data[i][2]}}</h4>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+            
+        </div>
+    </section>
+</body>
+
+</html>
