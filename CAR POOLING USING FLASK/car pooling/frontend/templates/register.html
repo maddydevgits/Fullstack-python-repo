@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body style="background-color: aquamarine;">
+    <div class="container">
+        <div class="row">
+          <div class="myCtn">
+            <div style="background-color: lavender; align-content: center;" class="myCard">
+    <h1>Registration</h1>
+    <form method="POST" style="text-align: center;" action="/register">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+            <option value="user">User</option>
+            <option value="driver">Driver</option>
+        </select><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+    <a href="/login">login</a>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

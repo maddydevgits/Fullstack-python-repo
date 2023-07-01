@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body style="background-color: aquamarine;">
+  <div class="container">
+    <div class="row">
+      <div class="myCtn">
+        <div style="background-color: lavender; text-align: center;" class="myCard">
+    <h1>Ride Data</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Ride ID</th>
+          <th>starting_point</th>
+          <th>pickup_time</th>
+          <th>Duration (km)</th>
+          <th>destination</th>
+          <th>price(in rupees)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ride_item in rides %}
+        <tr>
+          <td>{{ ride_item['id'] }}</td>
+          <td>{{ ride_item['starting_point'] }}</td>
+          <td>{{ ride_item['pickup_time'] }}</td>
+          <td>{{ ride_item['duration'] }}</td>
+          <td>{{ ride_item['destination'] }}</td>
+          <td>{{ride_item['payment']}}</td>
+          <td>
+           <button> <a class="button" href="/accept/{{ride_item['id']}}" type="decision">Accept</a></button>
+          
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/logout">Logout</a>
+  </div>
+  </div>
+  </div>
+  </div>
+</body>
+</html>

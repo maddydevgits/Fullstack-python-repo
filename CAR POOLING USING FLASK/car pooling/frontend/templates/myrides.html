@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Rides</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body style="background-color: aquamarine;">
+  <div class="container">
+    <div class="row">
+      <div class="myCtn">
+        <div style="background-color: lavender; text-align: center;" class="myCard">
+  <h1>My Rides</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Ride ID</th>
+        <th>Destination</th>
+        <th>Pickup Time</th>
+        <th>driver</th>
+        <th>Status</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for ride_items in myrides %}
+      <tr>
+        <td>{{ ride_items['id'] }}</td>
+        <td>{{ ride_items['destination'] }}</td>
+        <td>{{ ride_items['pickup_time'] }}</td>
+        <td>{{ride_items['driver']}}</td>
+        <td>
+          {%if ride_items['status']==1%}
+              accepted
+          {%endif%}
+          {%if ride_items['status']==0%}
+              pending
+          {%endif%}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/logout">Logout</a>
+  <a href="/user_dashboard">back</a>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

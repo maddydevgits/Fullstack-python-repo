@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body style="background-color: aquamarine;">
+    <div  class="container" style="align-items: center;">
+        <div class="row">
+          <div class="myCtn">
+            <div  style="background-color: lavender; text-align: center;" class="myCard">
+    <h1>User Dashboard</h1>
+    <h3>Provide Ride Details</h3>
+    <form method="POST" action="/submit_ride">
+        <label for="payment">How much can you pay for the ride?</label>
+        <input type="text" id="payment" name="payment" required><br><br>
+
+        <label for="duration">How long will your ride be?</label>
+        <input type="text" id="duration" name="duration" required><br><br>
+
+        <label for="destination">What is your destination?</label>
+        <input type="text" id="destination" name="destination" required><br><br>
+
+        <label for="pickup_time">What is your preferred pickup time?</label>
+        <input type="text" id="pickup_time" name="pickup_time" required><br><br>
+
+        <label for="starting_point">What is your starting point?</label>
+        <input type="text" id="starting_point" name="starting_point" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <a href="/logout">Logout</a>
+    <a href="/myride">myrides</a>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
