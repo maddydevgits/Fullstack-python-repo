@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Requirements</title>
+  <link value="stylesheet" href="style/requirement page.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 3px solid #ccc;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #e66b6b;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background-color: #990505;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #b10505;
+    }
+    nav {
+            background-color: #f10606;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+  </style>
+  </head>
+<body>  
+  <nav>
+    <ul>
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/donors">Donors</a></li>
+        <li><a href="/announcements">Announcements</a></li> 
+        <li><a href="/requests">Requests</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav> <br/> <br/>
+  <center>
+      <div class ="container">
+        <form action="/announcementsform" method="post">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+            <div class="form-group">
+              <label for="blood-type">Blood Type:</label>
+              <select id="blood-type" name="bloodtype" required>
+                <option value="">Select Blood Type</option>
+                <option value="Apos">A positive</option>
+                <option value="Aneg">A negative</option>
+                <option value="Bpos">B positive</option>
+                <option value="Bneg">B negative</option>
+                <option value="ABpos">AB positive</option>
+                <option value="ABneg">AB negative</option>
+                <option value="Opos">O positive</option>
+                <option value="Oneg">O negative</option>
+          </select><br>
+          <br>         
+            <label for="quantity">Quantity (in units):</label>
+            <input type="tel" id="quantity" name="quantity" required><br><br>
+            
+            <label for="urgency">Urgency:</label>
+            <select id="urgency" name="urgency" required>
+              <option value="" selected disabled>Select urgency level</option>
+              <option value="Urgent">Urgent</option>
+              <option value="Routine">Routine</option>
+            </select><br><br>
+            <label for="date">Requirement Date:</label><br>
+            <input type="tel" id="date" name="date"></textarea><br><br>
+            
+            <label for="message">Additional Information:</label><br>
+            <textarea id="message" name="message" rows="4"></textarea><br><br>
+            
+            <button>Submit</button>
+            <span style="color:red">{{err}}</span>
+            <span style="color:green">{{res}}</span>
+          </center>
+          </form>
+          </div>
+          </body>
+</html>

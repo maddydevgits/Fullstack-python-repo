@@ -1,0 +1,75 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body {
+	background:rgb(223, 172, 172);
+}
+.container {
+	position: absolute;
+	max-width: 800px;
+	height: 500px;
+	margin: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.myCtn {
+	position: relative;
+	background: #fff;
+	border-radius: 25px;
+	height: 100px;
+	padding: 25px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+.myCtn header {
+	color : blueviolet;
+	font-size: 40px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	padding-left:70px;
+}
+.row{
+	height: 50%;
+}
+.myCard {
+	position: relative;
+	background: #fff;
+	height:90%;
+	border-radius: 25px;
+	-webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+}	
+.myCtn .myInput{
+	width: 230px;
+	border-radius: 25px;
+	padding: 10px;
+	padding-left: 50px;
+	border-color:black;
+	-webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+}
+.myForm {
+	position: relative;
+	margin-top: 50px;
+}
+.myCtn .butt {
+	background: linear-gradient(45deg, #bb36fd,#9b00eB);
+	color: #fff;
+	width: 230px;
+	border: none;
+	border-radius: 25px;
+	padding: 10px;
+	-webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+}
+.myCtn .butt:hover {
+	background: linear-gradient(45deg, #c85bff, #b726ff);
+}

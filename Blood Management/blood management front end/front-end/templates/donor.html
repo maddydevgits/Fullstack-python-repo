@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DONOR PAGE</title>
+  <link value="stylesheet" href="sytle/donor page.css">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border: 3px solid #0f0f0f;
+    }
+    
+    th {
+      background-color: rgb(230, 90, 102);
+    }
+    nav {
+            background-color: #f10606;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/donors">Donors</a></li>
+        <li><a href="/announcements">Announcements</a></li> 
+        <li><a href="/requests">Requests</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav> <br/> <br/>
+  <h1 style="color: rgb(235, 24, 24)"><u>Donor Details:</u></h1>
+  <table>
+    <tr><B>
+      <th>DONOR NAME</th>
+      <th>BLOOD TYPE</th>
+      <th>MOBILE Number</th>
+      <th>Email ID</th>
+      </B>
+    </tr>
+    {%for i in range(l)%}
+      <tr>
+        <td>{{dashboard_data[i][0]}}</td>
+        <td>{{dashboard_data[i][1]}}</td>
+        <td>{{dashboard_data[i][2]}}</td>
+        <td>{{dashboard_data[i][3]}}</td>
+      </tr>
+    {%endfor%}
+  </table>
+</body>
+</html>

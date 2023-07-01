@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blood Bank Signup</title>
+  <link value="stylesheet" href="{{url_for('static',filename='signup.css')}}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 3px solid #ccc;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #e66b6b;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background-color: #990505;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #b10505;
+    }
+    nav {
+            background-color: #f10606;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/signup">SIGN up</a></li>
+        <li><a href="/login">LOGIN</a></li>
+        <!-- <li><a href="/application">Application</a></li>
+        <li><a href="/donors">Donor page</a></li>
+        <li><a href="/announcements">Requirement page</a></li> -->
+    </ul>
+</nav> <br/> <br/>
+  <div class="container">
+    <h2>Blood Bank Registration</h2>
+    <form action="/signupform" method="post">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <form>
+        <p>Select your gender:</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+
+      <div class="form-group">
+        <label for="blood-type">Blood Type:</label>
+        <select id="blood-type" name="bloodtype" required>
+          <option value="">Select Blood Type</option>
+          <option value="Apos">A+</option>
+          <option value="Aneg">A-</option>
+          <option value="Bpos">B+</option>
+          <option value="Bneg">B-</option>
+          <option value="ABpos">AB+</option>
+          <option value="ABneg">AB-</option>
+          <option value="Opos">O+</option>
+          <option value="Oneg">O-</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <!-- <div class="form-group"> -->
+        <input type="submit" style="background-color: #990505;color: white;" value="Register" />
+      <!-- </div> -->
+      <span style="color:red">{{err}}</span>
+      <span style="color:green">{{res}}</span>
+    </form>
+  </div>
+</body>
+</html>

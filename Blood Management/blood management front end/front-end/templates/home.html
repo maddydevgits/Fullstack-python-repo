@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><u>Blood Management</u></title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            border-bottom-left-radius: #070000;
+            background-color: rgb(253, 252, 252);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #070000;
+        }
+
+        nav {
+            background-color: #f10606;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #292525;
+            color: #fdfdfb;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Blood Management</u></h1>
+        <link value="stylesheet" href="{{url_for('static',filename='home.css')}}">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/signup">SIGN up</a></li>
+            <li><a href="/login">LOGIN</a></li>
+            <!-- <li><a href="/application">Application</a></li>
+            <li><a href="/donors">Donor page</a></li>
+            <li><a href="/announcements">Requirement page</a></li> -->
+        </ul>
+    </nav>
+    <main>
+        <h2>Welcome to Blood Management Posture</h2>
+        <p>
+            This website is dedicated to providing information and resources for effective blood management.
+        </p>
+        <p>
+             GIVE BLOOD <BR> SAVE LIFE
+        </p>
+    </main>
+
+    <footer>
+        &copy; 2023 Blood Management. All rights reserved.
+    </footer>
+</body>
+</html>
